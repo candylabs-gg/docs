@@ -102,3 +102,29 @@ Conventions
 | :----: | ------ | ------------ | ------------------------------------------------ |
 |        | GET    | /:id         | Get NFT metadata, traits, listings, sale history |
 |        | GET    | /:id/history | Return NFT customization history                 |
+
+
+## Type Response
+
+```json
+{
+  "success": true|false,              // Boolean status indicator
+  "data": { ... },                    // Primary response data when success is true
+  "error": {                          // Present only when success is false
+    "code": "ERROR_CODE",             // Machine-readable error code
+    "message": "Human readable error" // User-friendly message
+  },
+  "meta": {                           // Metadata about the request/response
+    "requestId": "uuid-v4",           // Unique identifier for request (for logging/tracking)
+    "timestamp": "ISO-8601",          // When the response was generated
+    "pagination": {                   // Optional, present when response is paginated
+      "page": 1,                      
+      "limit": 20,
+      "totalItems": 240,
+      "totalPages": 12,
+      "hasMore": true
+    },
+    "filters": { ... }                // Echo back any filters applied to the request
+  }
+}
+```
