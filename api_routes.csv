@@ -1,0 +1,2 @@
+ROUTE, METHOD, STATUS, DOC, TEST, DESCRIPTION
+/marketplace/[collection]/fetchCollectionStats, , , , , 
